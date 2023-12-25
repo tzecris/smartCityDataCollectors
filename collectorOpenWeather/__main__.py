@@ -3,7 +3,6 @@ import requests
 import pymongo
 
 # GET current weather and save it for future use
-# NOT TESTED
 
 def main(args):
     pre_start()
