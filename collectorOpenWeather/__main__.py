@@ -8,7 +8,8 @@ def main(args):
     pre_start()
     return {"msg":"success"}
 
-mongoClient = pymongo.MongoClient('mongodb://172.17.0.1:27017/')
+mongoClient = pymongo.MongoClient('mongodb://172.19.0.6:27017/')
+# mongoClient = pymongo.MongoClient('mongodb://localhost:27017/')
 mydb = mongoClient["smartCityDB"]
 
 lat = '37.983922'
