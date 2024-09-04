@@ -1,0 +1,5 @@
+minio==7.1.9
+pandas==1.1.5
+pymongo==4.1.1
+Requests==2.27.1
+scikit_learn==0.24.2

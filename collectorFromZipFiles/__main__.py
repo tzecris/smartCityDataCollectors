@@ -13,12 +13,9 @@ urlWeather = ["http://iot.ee.surrey.ac.uk:8080/datasets/weather/feb_jun_2014/raw
 urlPollution = [
     "http://iot.ee.surrey.ac.uk:8080/datasets/pollution/citypulse_pollution_csv_data_aarhus_aug_oct_2014.tar.gz"]
 
-# client = Minio("172.17.0.2:9000","minio99","minio123",secure=False)
-# client = Minio("127.0.0.1:9000", access_key="5VCTEQOQ0GR0NV1T67GN", secret_key="8MBK5aJTR330V1sohz4n1i7W5Wv/jzahARNHUzi3",
-#                secure=False)
+client = Minio("minio:9000", "5VCTEQOQ0GR0NV1T67GN", "8MBK5aJTR330V1sohz4n1i7W5Wv/jzahARNHUzi3",secure=False)
+# client = Minio("127.0.0.1:9003", "minio99", "minio123", secure=False)
 
-
-client = Minio("127.0.0.1:9003","minio99","minio123",secure=False)
 
 def connect_minio(dataType):
     if dataType == 'weather':
@@ -31,20 +28,25 @@ def connect_minio(dataType):
         dataUrl = urlWeather
         contentType = 'text/plain'
 
-    if client.bucket_exists(dataType):
-        try:
-            for url in dataUrl:
-                start_process(url, dataType, contentType)
-        except Exception as e:
-            print(e)
-            print("something went wrong")
+    print('connect minio')
+    if not client.bucket_exists(dataType):
+        client.make_bucket(dataType)
 
-    else:
-        print("this bucket does not exist")
+    paths = []
+    for url in dataUrl:
+        print(url)
+        current_dateTime = datetime.now()
+        start_process(url, dataType, contentType, current_dateTime)
+        paths.append(current_dateTime.isoformat())
+
+    return paths
 
 
 def saveToMinio(name, tfile, current_dateTime, dataType, contentType, isZip):
     print(name)
+
+    if "MACOSX" in name:
+        return
 
     if (isZip):
         file = tfile.open(name)
@@ -52,6 +54,9 @@ def saveToMinio(name, tfile, current_dateTime, dataType, contentType, isZip):
         file = tfile.extractfile(name)
 
     content = file.read()
+
+    if "/" in name:
+        name = name.split("/")[1]
     fileName = current_dateTime.isoformat() + '/' + name
 
     client.put_object(
@@ -63,9 +68,7 @@ def saveToMinio(name, tfile, current_dateTime, dataType, contentType, isZip):
     )
 
 
-def start_process(url, dataType, contentType):
-    current_dateTime = datetime.now()
-
+def start_process(url, dataType, contentType, current_dateTime):
     if (url.endswith(".tar.gz")):
         ftpstream = urlopen(url)
         tmpfile = BytesIO()
@@ -99,11 +102,19 @@ def main(args):
         dataType = args['type']
     else:
         dataType = "weather"
-    connect_minio(dataType)
-    return {"msg": "success",
-            "dataType": dataType,
-            "args": args
-            }
+
+    try:
+        print(dataType)
+        filepath = connect_minio(dataType)
+        json={"msg": "success",
+              "bucket": dataType,
+              "filepath": filepath
+              }
+        print(json)
+        return json
+    except Exception as ex:
+        print(ex)
+        return {"msg": "error"}
 
 
 if __name__ == '__main__':

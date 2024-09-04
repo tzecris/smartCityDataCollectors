@@ -2,3 +2,7 @@
 /venv/
 /readFromDB/test.json
 /.run/
+/docker-compose/openwhisk-package-alarms/
+/docker-compose/openwhisk-src/
+/docker-compose/.travis/
+/docker-compose/apigateway/

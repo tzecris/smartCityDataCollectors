@@ -1,50 +1,63 @@
 import sys
 import pandas as pd
-import json
 import pymongo
 from minio import Minio
-from io import BytesIO
 
-# client = Minio("127.0.0.1:9000",access_key="GpctiYhJEJjRG8r0",secret_key="DhIMWMz43uRWyhXQ0CkFMRaQtv6LWe1T",secure=False)
-# client = Minio("172.17.0.2:9000",access_key="GpctiYhJEJjRG8r0",secret_key="DhIMWMz43uRWyhXQ0CkFMRaQtv6LWe1T",secure=False)
-client = Minio("172.17.0.2:9000",access_key="1mrwuetKJr7XrBtN",secret_key="OHkccz5pCQ3eVyFHTfSOtGWDtx2zrv32",secure=False)
+client = Minio("minio:9000", "5VCTEQOQ0GR0NV1T67GN", "8MBK5aJTR330V1sohz4n1i7W5Wv/jzahARNHUzi3", secure=False)
+# client = Minio("127.0.0.1:9003", "minio99", "minio123", secure=False)
 
-mongoClient = pymongo.MongoClient('mongodb://localhost:27017/',
-                     username='user',
-                     password='pass')
+# mongoClient = pymongo.MongoClient('mongodb://localhost:27017/')
+mongoClient = pymongo.MongoClient('mongodb://mongo:27017/')
+
 mydb = mongoClient["smartCityDB"]
+
 
 def connect_minio(args):
     print(args)
 
-    if client.bucket_exists("pollution"):
+    if 'bucket' in args:
+        bucket = args['bucket']
+    else:
+        bucket = "pollution"
+
+    if 'filepath' in args:
+        filepaths = args['filepath']
+    else:
+        print("file path required")
+        return {"error": "file path required"}
+        # filepath = '2023-12-31T21:02:53.648454'
+
+    if client.bucket_exists(bucket):
         try:
-            objects = client.list_objects("pollution")
+            for filepath in filepaths:
+                # "my-bucket", prefix="my/prefix/", recursive=True,
+                objects = client.list_objects(bucket, prefix=filepath + '/', recursive=True)
 
-            for item in objects:
-
-                raw_data = client.list_objects("pollution")
-
-                for df in raw_data:
-                    raw_file = client.get_object(df.bucket_name, df.object_name)
+                for obj in objects:
+                    raw_file = client.get_object(obj.bucket_name, obj.object_name)
                     df_csv = pd.read_csv(raw_file)
-                    start_process(df_csv, df.object_name)
+                    start_process(df_csv, obj.object_name, bucket)
+
+            return {"msg": "success"}
         except Exception as e:
-           print(e)
-           print("error on reading file")
+            print(e)
+            print("error on reading file")
+            return {"error": "error on reading file"}
 
     else:
         print("this bucket does not exist")
+        return {"error": "this bucket does not exist"}
 
 
-def start_process(df_csv, file_name):
+def list_folder_reader(bn, name):
+    return client.list_objects(bn, name)
+
+
+def start_process(df_csv, file_name, bucket):
     start_date = df_csv.head(1)['timestamp']
     end_date = df_csv.tail(1)['timestamp']
-    # print(start_date)
-    # print(end_date)
 
-
-    index_labels=['ozone','particullate_matter','carbon_monoxide','sulfure_dioxide','nitrogen_dioxide']
+    index_labels = ['ozone', 'particullate_matter', 'carbon_monoxide', 'sulfure_dioxide', 'nitrogen_dioxide']
     df_csv = df_csv.filter(items=index_labels)
     df = pd.DataFrame(df_csv)
     # print(df)
@@ -59,34 +72,26 @@ def start_process(df_csv, file_name):
 
     # print("ne w ALL: ")
     # print(dfAll)
-    results_csv = dfAll.T.to_csv().encode('utf-8')
+    # results_csv = dfAll.T.to_csv().encode('utf-8')
 
     records = dfAll.to_dict()
     recordsMin = min.to_dict()
     recordsMax = max.to_dict()
 
-    dfAll["start_date"] = start_date.values[0]
-    dfAll["end_date"] = end_date.values[0]
-    print(records)
-    print(recordsMax)
-    print(recordsMin)
-    # mycol = mydb["pollution"]
-    # result = mycol.insert_one(records)
-    # print(result)
+    records["start_date"] = start_date.values[0]
+    records["end_date"] = end_date.values[0]
 
-    # # output to csv files
-    # client.put_object(
-	# "results",
-	# "/" + file_name + ".csv",
-	# data=BytesIO(results_csv),
-	# length=len(results_csv),
-	# content_type='application/csv'
-    # )
+    # print(records)
+    # print(recordsMax)
+    # print(recordsMin)
+    mycol = mydb[bucket]
+    records['_id'] = file_name
+    result = mycol.insert_one(records)
+    # print(result)
 
 
 def main(args):
-    connect_minio(args)
-    return {"msg":"success"}
+    return connect_minio(args)
 
 
 if __name__ == '__main__':

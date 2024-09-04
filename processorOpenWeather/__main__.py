@@ -3,17 +3,17 @@ import sys
 import pymongo
 import datetime
 
+
 def main(args):
     pre_start()
     return {'msg': 'success'}
 
 
-# mongoClient = pymongo.MongoClient('mongodb://172.19.0.6:27017/')
-mongoClient = pymongo.MongoClient('mongodb://localhost:27017/')
+mongoClient = pymongo.MongoClient('mongodb://mongo:27017/')
+# mongoClient = pymongo.MongoClient('mongodb://localhost:27017/')
 mydb = mongoClient["smartCityDB"]
 mycol = mydb["liveWeather"]
 mycolAvg = mydb["liveWeatherAvg"]
-
 
 urlPollution = []
 
@@ -28,16 +28,15 @@ def pre_start():
 
 def start_process():
     today = datetime.datetime.today()
-    # end = datetime.datetime(today.year, today.month, today.day, 00, 00, 00)
-    end = today
-    start = end - datetime.timedelta(hours=2)
+    end = datetime.datetime(today.year, today.month, today.day, 00, 00, 00)
+    start = end - datetime.timedelta(days=1)
 
     print('end:')
     print(end.timestamp())
     print('start:')
     print(start.timestamp())
 
-    results = mycol.find({'dt': {'$lt': end.timestamp(), '$gte': start.timestamp()}})
+    results = mycol.find({'dt': {'$lt': end.timestamp(), '$gte': start.timestamp()}}, {'_id': False})
 
     weatherInfo = collections.defaultdict(list)
 
@@ -47,7 +46,8 @@ def start_process():
         weatherInfo['pressure'].append(int(result['main']['pressure']))
         weatherInfo['humidity'].append(float(result['main']['humidity']))
 
-    averages = {sub: sum(scores)/len(scores) for sub, scores in weatherInfo.items()}
+# TODO min max
+    averages = {sub: sum(scores) / len(scores) for sub, scores in weatherInfo.items()}
     averages['tm'] = today.timestamp()
     result = mycolAvg.insert_one(averages)
     print(result)
