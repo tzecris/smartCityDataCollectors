@@ -1,6 +1,6 @@
 
-    wsk property set --auth '23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP'
-
+    wsk -i property set --auth '23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP'
+#    wsk -i property set --apihost 'https://192.168.1.19'
     
     echo "Creating actions"
     wsk -i action create cowa --docker tzelishua/collectorow:latest collectorOpenWeather/__main__.py

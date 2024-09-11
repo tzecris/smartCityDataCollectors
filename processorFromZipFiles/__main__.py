@@ -80,6 +80,8 @@ def start_process(df_csv, file_name, bucket):
 
     records["start_date"] = start_date.values[0]
     records["end_date"] = end_date.values[0]
+    records["min"] = recordsMin
+    records["max"] = recordsMax
 
     # print(records)
     # print(recordsMax)
@@ -87,7 +89,7 @@ def start_process(df_csv, file_name, bucket):
     mycol = mydb[bucket]
     records['_id'] = file_name
     result = mycol.insert_one(records)
-    # print(result)
+    print(result)
 
 
 def main(args):

@@ -2,7 +2,7 @@ import requests
 import sys
 
 def get_notifications(lat, lon):
-    # Define the API endpoint and parameters
+
     api_url = "https://api.open-meteo.com/v1/forecast"
     params = {
         "latitude": lat,
@@ -34,7 +34,7 @@ def get_notifications(lat, lon):
                 reasons.append(f"high wind speeds, {wind_speed} km/h")
             return reasons
 
-        # Analyze the weather data
+
         weather_report = []
         for i in range(len(dates)):
             reasons = has_bad_weather(max_temps[i], min_temps[i], rain_sum[i], wind_speed_max[i])
@@ -47,7 +47,7 @@ def get_notifications(lat, lon):
                 "bad_weather": reasons
             })
 
-        # Print the weather report
+
         print("Weather Report for the Next Days:")
         for report in weather_report:
             if report['bad_weather']:

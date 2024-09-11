@@ -1,0 +1,1413 @@
+[
+    {
+        "id": "5a5c3dbee6b01d6a",
+        "type": "tab",
+        "label": "Test",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eab19e069d8d3489",
+        "type": "tab",
+        "label": "Collect and proccess zip",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "308ab0ecf0db5dd7",
+        "type": "tab",
+        "label": "Weather chart",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8c861955c99d82da",
+        "type": "tab",
+        "label": "Current Weather Info",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "41451a406e3c8848",
+        "type": "tab",
+        "label": "Weather Notification",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b653c0d1241cc811",
+        "type": "tab",
+        "label": "Weather Prediction",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eaa8c11e30406a9a",
+        "type": "openwhisk-service",
+        "name": "localhost",
+        "api": "http://127.0.0.1:8888/api/v1"
+    },
+    {
+        "id": "080344818adcda3d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "d2a22c9fd35d6568",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "27d0f917cc4363d7",
+        "type": "ui_group",
+        "name": "Process Smart city data from survey",
+        "tab": "5b6a889e88c3b8b4",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "17e35ec629e4ff11",
+        "type": "ui_tab",
+        "name": "Charts",
+        "icon": "show_chart",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "544ca6d6a5d20573",
+        "type": "ui_group",
+        "name": "Weather charts",
+        "tab": "17e35ec629e4ff11",
+        "order": 2,
+        "disp": true,
+        "width": "15",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "866717eac5d6fe1b",
+        "type": "ui_tab",
+        "name": "Current weather info",
+        "icon": "wb_sunny",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "06d498252dd293ca",
+        "type": "ui_group",
+        "name": "Current Weather info",
+        "tab": "866717eac5d6fe1b",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "cb4e2b45.4b4218",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "5e7e5126.e305d",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5e7e5126.e305d",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "5b6a889e88c3b8b4",
+        "type": "ui_tab",
+        "name": "Smart city survey data",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9199784ab14890e5",
+        "type": "ui_tab",
+        "name": "Weather Prediction",
+        "icon": "graphic_eq",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e2413c0b02ea0044",
+        "type": "ui_group",
+        "name": "Weather Prediction",
+        "tab": "9199784ab14890e5",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "703359dfabd27156",
+        "type": "debug",
+        "z": "5a5c3dbee6b01d6a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "4ffe23d5f7484380",
+        "type": "inject",
+        "z": "5a5c3dbee6b01d6a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "namespace",
+                "v": "{\"namespace\":\"guest\"}",
+                "vt": "json"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{\"object\":\"alex\"}",
+        "payloadType": "json",
+        "x": 280,
+        "y": 320,
+        "wires": [
+            [
+                "703359dfabd27156",
+                "9f5208b5a8353afc"
+            ]
+        ]
+    },
+    {
+        "id": "5814fb21493d31b6",
+        "type": "openwhisk-trigger",
+        "z": "5a5c3dbee6b01d6a",
+        "name": "",
+        "namespace": "guest",
+        "trigger": "testtrigger",
+        "service": "eaa8c11e30406a9a",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "edit": false,
+        "x": 560,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "9f5208b5a8353afc",
+        "type": "openwhisk-action",
+        "z": "5a5c3dbee6b01d6a",
+        "name": "actionTest",
+        "func": "",
+        "namespace": "",
+        "action": "testpro",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "service": "eaa8c11e30406a9a",
+        "edit": false,
+        "x": 660,
+        "y": 560,
+        "wires": [
+            [
+                "58a5182b8e7a0bc4"
+            ]
+        ]
+    },
+    {
+        "id": "58a5182b8e7a0bc4",
+        "type": "debug",
+        "z": "5a5c3dbee6b01d6a",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1060,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ee8b5579c0389785",
+        "type": "openwhisk-action",
+        "z": "eab19e069d8d3489",
+        "name": "dataCollection",
+        "func": "",
+        "namespace": "",
+        "action": "mySequence",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "service": "eaa8c11e30406a9a",
+        "edit": false,
+        "x": 440,
+        "y": 320,
+        "wires": [
+            [
+                "6a6003fd6ddacc0c",
+                "413cada276561e71"
+            ]
+        ]
+    },
+    {
+        "id": "3cfd2c8e0663585b",
+        "type": "json",
+        "z": "eab19e069d8d3489",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 120,
+        "wires": [
+            [
+                "304503e826eed12f",
+                "ee8b5579c0389785"
+            ]
+        ]
+    },
+    {
+        "id": "304503e826eed12f",
+        "type": "debug",
+        "z": "eab19e069d8d3489",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "446c5fac5cf73181",
+        "type": "function",
+        "z": "eab19e069d8d3489",
+        "name": "toJSON",
+        "func": "var type = `{\"type\": \"${msg.payload}\"}`\nvar msg2 = { payload: type, namespace:\"guest\"}\nreturn msg2;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 120,
+        "wires": [
+            [
+                "3cfd2c8e0663585b"
+            ]
+        ]
+    },
+    {
+        "id": "6a6003fd6ddacc0c",
+        "type": "debug",
+        "z": "eab19e069d8d3489",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 780,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f57a0a107b8acd10",
+        "type": "ui_dropdown",
+        "z": "eab19e069d8d3489",
+        "name": "",
+        "label": "",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "27d0f917cc4363d7",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Select data type",
+                "value": "",
+                "type": "str"
+            },
+            {
+                "label": "Pollution",
+                "value": "pollution",
+                "type": "str"
+            },
+            {
+                "label": "Weather",
+                "value": "weather",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "446c5fac5cf73181"
+            ]
+        ]
+    },
+    {
+        "id": "a665081f637ff96d",
+        "type": "openwhisk-action",
+        "z": "eab19e069d8d3489",
+        "name": "read_data",
+        "func": "",
+        "namespace": "",
+        "action": "read_data",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "service": "eaa8c11e30406a9a",
+        "edit": false,
+        "x": 940,
+        "y": 360,
+        "wires": [
+            [
+                "7a21193d9c59edd4"
+            ]
+        ]
+    },
+    {
+        "id": "cdf97f423f37d844",
+        "type": "json",
+        "z": "eab19e069d8d3489",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 790,
+        "y": 360,
+        "wires": [
+            [
+                "a665081f637ff96d"
+            ]
+        ]
+    },
+    {
+        "id": "413cada276561e71",
+        "type": "function",
+        "z": "eab19e069d8d3489",
+        "name": "toJSON",
+        "func": "var collection = `{\"collection\": \"pollution\"}`\nvar msg2 = { payload: collection, namespace:\"guest\"}\nreturn msg2;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 360,
+        "wires": [
+            [
+                "cdf97f423f37d844"
+            ]
+        ]
+    },
+    {
+        "id": "7a21193d9c59edd4",
+        "type": "debug",
+        "z": "eab19e069d8d3489",
+        "name": "debug 12",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1100,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "901be54bdadddb64",
+        "type": "openwhisk-action",
+        "z": "308ab0ecf0db5dd7",
+        "name": "read_data",
+        "func": "",
+        "namespace": "",
+        "action": "read_data",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "service": "eaa8c11e30406a9a",
+        "edit": false,
+        "x": 740,
+        "y": 360,
+        "wires": [
+            [
+                "215d72b4f0757cae",
+                "4919e5096306de30",
+                "e9db67966a48d784"
+            ]
+        ]
+    },
+    {
+        "id": "3742ebefc7638dd7",
+        "type": "ui_chart",
+        "z": "308ab0ecf0db5dd7",
+        "name": "",
+        "group": "544ca6d6a5d20573",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "Y-M-D",
+        "interpolate": "cubic",
+        "nodata": "Loading",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "50",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#afe9c8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1210,
+        "y": 380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "215d72b4f0757cae",
+        "type": "function",
+        "z": "308ab0ecf0db5dd7",
+        "name": "toJSON",
+        "func": "var type = `{\"type\": \"${msg.payload.data[0].temp}\"}`\nvar list = msg.payload.data\nvar outputTempData=[]\nvar outputhumidity=[]\nlist.forEach((item)=> {\n    outputTempData.push({\n        \"x\": new Date(item.tm * 1000), \"y\": Math.round(item.temp * 100) / 100 })\n    outputhumidity.push({ \"x\": new Date(item.tm * 1000), \"y\": Math.round(item.feels_like * 100) / 100})\n\n} );\n\nfunction compareByTumestamp(a, b) {\n    return a.x - b.x;\n}\noutputTempData.sort(compareByTumestamp);\noutputhumidity.sort(compareByTumestamp);\n\nvar allList = [{\n    \"series\": [\"Temperature\",\"Feels like\"], \n    \"data\": [outputTempData, outputhumidity],\n\"labels\":[\"Temperature\", \"Feels like\"]}]\nconsole.log(JSON.stringify(allList))\n\nvar msg2 = { payload: allList, namespace: \"guest\" }\nreturn msg2;\n\n// var msg2 = {\n//     payload: [{\n//         \"series\": [\"A\", \"B\", \"C\"],\n//         \"data\": [\n//             [{ \"x\": 1504029632890, \"y\": 5 },\n//             { \"x\": 1504029636001, \"y\": 4 },\n//             { \"x\": 1504029638656, \"y\": 2 }\n//             ],\n//             [{ \"x\": 1504029633514, \"y\": 6 },\n//             { \"x\": 1504029636622, \"y\": 7 },\n//             { \"x\": 1504029639539, \"y\": 6 }\n//             ],\n//             [{ \"x\": 1504029634400, \"y\": 7 },\n//             { \"x\": 1504029637959, \"y\": 7 },\n//             { \"x\": 1504029640317, \"y\": 7 }\n//             ]\n//         ],\n//         \"labels\": [\"\"]\n//     }], namespace: \"guest\" }\n// return msg2;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 340,
+        "wires": [
+            [
+                "3742ebefc7638dd7",
+                "efea3ab3a8f5d629"
+            ]
+        ]
+    },
+    {
+        "id": "efea3ab3a8f5d629",
+        "type": "debug",
+        "z": "308ab0ecf0db5dd7",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "4919e5096306de30",
+        "type": "function",
+        "z": "308ab0ecf0db5dd7",
+        "name": "toJSON",
+        "func": "var type = `{\"type\": \"${msg.payload.data[0].temp}\"}`\nvar list = msg.payload.data\nvar outputTempData=[]\nlist.forEach((item)=> {\n    outputTempData.push({\n        \"x\": new Date(item.tm * 1000), \"y\": item.pressure })\n\n} );\n\nfunction compareByTumestamp(a, b) {\n    return a.x - b.x;\n}\noutputTempData.sort(compareByTumestamp);\n\nvar allList = [{\n    \"series\": [\"Humidity\"], \n    \"data\": [outputTempData],\n    \"labels\": [\"Humidity\"]}]\nvar msg2 = { payload: allList, namespace: \"guest\" }\nreturn msg2;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 980,
+        "y": 420,
+        "wires": [
+            [
+                "2f9885433f6235a9",
+                "88459ee4d3a9fddd"
+            ]
+        ]
+    },
+    {
+        "id": "2f9885433f6235a9",
+        "type": "ui_chart",
+        "z": "308ab0ecf0db5dd7",
+        "name": "",
+        "group": "544ca6d6a5d20573",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "Y-M-D",
+        "interpolate": "cubic",
+        "nodata": "Loading",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "50",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#2e612e",
+            "#afe9c8",
+            "#ff7f0e",
+            "#2e612e",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1200,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "88459ee4d3a9fddd",
+        "type": "debug",
+        "z": "308ab0ecf0db5dd7",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1200,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "2868c943ce3f6631",
+        "type": "json",
+        "z": "308ab0ecf0db5dd7",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 610,
+        "y": 300,
+        "wires": [
+            [
+                "901be54bdadddb64"
+            ]
+        ]
+    },
+    {
+        "id": "e77fbce9eac78074",
+        "type": "function",
+        "z": "308ab0ecf0db5dd7",
+        "name": "toJSON",
+        "func": "\nvar msg2 = { payload: msg.payload, namespace:\"guest\"}\nreturn msg2;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 300,
+        "wires": [
+            [
+                "2868c943ce3f6631"
+            ]
+        ]
+    },
+    {
+        "id": "0b2a474043c4155b",
+        "type": "ui_button",
+        "z": "308ab0ecf0db5dd7",
+        "name": "",
+        "group": "544ca6d6a5d20573",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Get data ",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "{\"collection\":\"liveWeatherAvg\"}",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 260,
+        "y": 300,
+        "wires": [
+            [
+                "e77fbce9eac78074"
+            ]
+        ]
+    },
+    {
+        "id": "fc24fe1497208d44",
+        "type": "ui_chart",
+        "z": "308ab0ecf0db5dd7",
+        "name": "",
+        "group": "544ca6d6a5d20573",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Pressure",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "Y-M-D",
+        "interpolate": "cubic",
+        "nodata": "Loading",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "50",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#6bb0e1",
+            "#afe9c8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1200,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e9db67966a48d784",
+        "type": "function",
+        "z": "308ab0ecf0db5dd7",
+        "name": "toJSON",
+        "func": "var type = `{\"type\": \"${msg.payload.data[0].temp}\"}`\nvar list = msg.payload.data\nvar outputhumidity=[]\nlist.forEach((item)=> {\n    outputhumidity.push({ \"x\": new Date(item.tm * 1000), \"y\": item.humidity})\n\n} );\n\nfunction compareByTumestamp(a, b) {\n    return a.x - b.x;\n}\noutputhumidity.sort(compareByTumestamp);\n\nvar allList = [{\n    \"series\": [\"Pressure\"], \n    \"data\": [ outputhumidity],\n    \"labels\": [ \"Pressure\"]}]\nvar msg2 = { payload: allList, namespace: \"guest\" }\nreturn msg2;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 520,
+        "wires": [
+            [
+                "fc24fe1497208d44"
+            ]
+        ]
+    },
+    {
+        "id": "c01519c286a1df1d",
+        "type": "debug",
+        "z": "8c861955c99d82da",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "514d2fd59a85fb98",
+        "type": "openwhisk-action",
+        "z": "8c861955c99d82da",
+        "name": "getWeatherInfo",
+        "func": "",
+        "namespace": "",
+        "action": "getWeatherInfo",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "service": "eaa8c11e30406a9a",
+        "edit": false,
+        "x": 700,
+        "y": 500,
+        "wires": [
+            [
+                "51e7e2da423d5897",
+                "631e831dcb3e410d",
+                "c6e93ea0d2b10d38",
+                "67c0d6f8a26309f4",
+                "c9991a5688aef283",
+                "befa9cf503319af4"
+            ]
+        ]
+    },
+    {
+        "id": "ef094a563bec54c2",
+        "type": "ui_form",
+        "z": "8c861955c99d82da",
+        "name": "",
+        "label": "",
+        "group": "06d498252dd293ca",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Locations",
+                "value": "address",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "address": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 190,
+        "y": 420,
+        "wires": [
+            [
+                "6f9b35eb27a91176",
+                "c01519c286a1df1d"
+            ]
+        ]
+    },
+    {
+        "id": "6f9b35eb27a91176",
+        "type": "function",
+        "z": "8c861955c99d82da",
+        "name": "toJSON",
+        "func": "\nvar msg2 = { payload: msg.payload, namespace:\"guest\"}\nreturn msg2;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 460,
+        "wires": [
+            [
+                "514d2fd59a85fb98"
+            ]
+        ]
+    },
+    {
+        "id": "51e7e2da423d5897",
+        "type": "ui_text",
+        "z": "8c861955c99d82da",
+        "group": "06d498252dd293ca",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Feels Like",
+        "format": "{{msg.payload.main.feels_like}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1130,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "631e831dcb3e410d",
+        "type": "debug",
+        "z": "8c861955c99d82da",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 850,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "c6e93ea0d2b10d38",
+        "type": "ui_text",
+        "z": "8c861955c99d82da",
+        "group": "06d498252dd293ca",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Weather Description",
+        "format": "{{msg.payload.weather[0].description}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1120,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "67c0d6f8a26309f4",
+        "type": "ui_text",
+        "z": "8c861955c99d82da",
+        "group": "06d498252dd293ca",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Humidity",
+        "format": "{{msg.payload.main.humidity}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1120,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "c9991a5688aef283",
+        "type": "ui_text",
+        "z": "8c861955c99d82da",
+        "group": "06d498252dd293ca",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperature",
+        "format": "{{msg.payload.main.temp}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1110,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "befa9cf503319af4",
+        "type": "ui_text",
+        "z": "8c861955c99d82da",
+        "group": "06d498252dd293ca",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Location",
+        "format": "{{msg.payload.name}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1120,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "39a7385c6d4dd322",
+        "type": "openwhisk-action",
+        "z": "41451a406e3c8848",
+        "name": "weatherNot",
+        "func": "",
+        "namespace": "",
+        "action": "weatherNotify",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "service": "eaa8c11e30406a9a",
+        "edit": false,
+        "x": 570,
+        "y": 340,
+        "wires": [
+            [
+                "070b939d98491b52",
+                "658bd49c7c6e444a"
+            ]
+        ]
+    },
+    {
+        "id": "d6d16e4d613f8de8",
+        "type": "ui_toast",
+        "z": "41451a406e3c8848",
+        "position": "top right",
+        "displayTime": "10",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "",
+        "name": "Weather Notification",
+        "x": 1180,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "cb4f106967afd115",
+        "type": "change",
+        "z": "41451a406e3c8848",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Weather Notifucation",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 960,
+        "y": 400,
+        "wires": [
+            [
+                "d6d16e4d613f8de8"
+            ]
+        ]
+    },
+    {
+        "id": "070b939d98491b52",
+        "type": "debug",
+        "z": "41451a406e3c8848",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "658bd49c7c6e444a",
+        "type": "function",
+        "z": "41451a406e3c8848",
+        "name": "function 1",
+        "func": "var report = msg.payload.data\nvar notification= ''\nlet days= 0;\nif(report){\n    for (let i = 0; i < report.length; i++) {\n        if(report[i].bad_weather.length>0){\n            notification = `${notification}On ${report[i].date}: We expect`\n            for (let j = 0; j < report[i].bad_weather.length; j++) {\n                notification = `${notification} ${report[i].bad_weather[j]} \\n`\n            }\n         days= days+1\n        }\n        if (days ==1) break;\n    }\n \n\n}\n\nvar msg2 = { payload: notification, namespace:\"guest\"}\n\nreturn msg2;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [
+                "cb4f106967afd115"
+            ]
+        ]
+    },
+    {
+        "id": "e8fa5be2fc772014",
+        "type": "function",
+        "z": "41451a406e3c8848",
+        "name": "toJSON",
+        "func": "\nvar msg2 = { payload: msg.payload, namespace:\"guest\"}\nreturn msg2;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 340,
+        "wires": [
+            [
+                "39a7385c6d4dd322"
+            ]
+        ]
+    },
+    {
+        "id": "84dfecbdd7512c8d",
+        "type": "inject",
+        "z": "41451a406e3c8848",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "3600",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "10",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 190,
+        "y": 340,
+        "wires": [
+            [
+                "e8fa5be2fc772014"
+            ]
+        ]
+    },
+    {
+        "id": "0fbc0b2ee4b3a0a9",
+        "type": "debug",
+        "z": "b653c0d1241cc811",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 490,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f69e17f07aaa3664",
+        "type": "openwhisk-action",
+        "z": "b653c0d1241cc811",
+        "name": "weatherPredict",
+        "func": "",
+        "namespace": "",
+        "action": "weatherPredict",
+        "params": [
+            {
+                "disabled": true
+            }
+        ],
+        "service": "eaa8c11e30406a9a",
+        "edit": false,
+        "x": 740,
+        "y": 320,
+        "wires": [
+            [
+                "7686179aa57509e2",
+                "e501ea78a4fa8e13",
+                "b09dd4f51fbdd788"
+            ]
+        ]
+    },
+    {
+        "id": "4ab7d5258b666235",
+        "type": "ui_form",
+        "z": "b653c0d1241cc811",
+        "name": "",
+        "label": "",
+        "group": "e2413c0b02ea0044",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Pressure",
+                "value": "pressure",
+                "type": "text",
+                "required": true,
+                "rows": null
+            },
+            {
+                "label": "Humidity",
+                "value": "humidity",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "pressure": "",
+            "humidity": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "topic",
+        "topicType": "msg",
+        "splitLayout": "",
+        "className": "",
+        "x": 230,
+        "y": 240,
+        "wires": [
+            [
+                "83bde875efa2f5fd",
+                "0fbc0b2ee4b3a0a9"
+            ]
+        ]
+    },
+    {
+        "id": "83bde875efa2f5fd",
+        "type": "function",
+        "z": "b653c0d1241cc811",
+        "name": "toJSON",
+        "func": "\nvar msg2 = { payload: msg.payload, namespace:\"guest\"}\nreturn msg2;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 280,
+        "wires": [
+            [
+                "f69e17f07aaa3664"
+            ]
+        ]
+    },
+    {
+        "id": "7686179aa57509e2",
+        "type": "debug",
+        "z": "b653c0d1241cc811",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 890,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "e501ea78a4fa8e13",
+        "type": "ui_text",
+        "z": "b653c0d1241cc811",
+        "group": "e2413c0b02ea0044",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Predicted Temperature",
+        "format": "{{msg.payload.data.predicted_temperature}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1120,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "b09dd4f51fbdd788",
+        "type": "ui_text",
+        "z": "b653c0d1241cc811",
+        "group": "e2413c0b02ea0044",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Best Algorithm ",
+        "format": "{{msg.payload.data.best_method}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 1140,
+        "y": 360,
+        "wires": []
+    }
+]
