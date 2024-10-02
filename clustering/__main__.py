@@ -7,6 +7,7 @@ from sklearn.cluster import KMeans, DBSCAN
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import StandardScaler
 
+# mongoClient = pymongo.MongoClient('mongodb://mongo:27017/')
 mongoClient = pymongo.MongoClient('mongodb://localhost:27017/')
 mydb = mongoClient["smartCityDB"]
 mycol = mydb["liveWeatherTest"]
